@@ -44,14 +44,14 @@ describe('Cohort', () => {
     expect(newCohort.students[0].gitHubUser).toEqual(student.gitHubUser)
     expect(newCohort.students[0].email).toEqual(student.email)
   })
-  //it('can remove a cohort by cohort name', () => {
+  it('can remove a cohort by cohort name', () => {
     // Set up
-    //const cohort1 = cohortManager.addCohort('Cohort 01')
-    //const cohort2 = cohortManager.addCohort('Cohort 02')
+    const cohort1 = cohortManager.createCohort('Cohort 01')
+    const cohort2 = cohortManager.createCohort('Cohort 02')
     // Execute
-    //cohortManager.remove('Cohort 02')
+    cohortManager.removeCohort('Cohort 02')
     // Verify
 
-   // expect(cohortManager.cohorts).toEqual([cohort1])
- // })
+   expect(cohortManager.cohorts).toEqual([cohort1])
+ })
 })

@@ -30,6 +30,17 @@ class CohortManager {
     else return cohort.addStudent(studentID, name, lastName, gitHubUser, email)
     // else returnt 'error'
   }
+
+  removeCohort(name) {
+    for (let i = 0; i < this.cohorts.length; i++) {
+      const cohort = this.cohorts[i]
+      const myName = cohort.name
+      if (name === myName) {
+        this.cohorts.splice([i], 1)
+      }
+    }
+    return null
+  }
 }
 
 module.exports = CohortManager
